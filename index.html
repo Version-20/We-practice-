@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Navbar with Icons</title>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <div class="menu">
+  <ul>
+    <li class="link" onclick="showSection('home')">
+      <span class="link-icon"><ion-icon name="home-outline"></ion-icon></span>
+      <span class="link-title">Home</span>
+    </li>
+    <li class="link" onclick="showSection('message')">
+      <span class="link-icon"><ion-icon name="send"></ion-icon></span>
+      <span class="link-title">Contact</span>
+    </li>
+    <li class="link" onclick="showSection('profile')">
+      <span class="link-icon"><ion-icon name="person-outline"></ion-icon></span>
+      <span class="link-title">Profile</span>
+    </li>
+  </ul>
+
+  <!-- Toggle Button -->
+  <div id="themeToggle" class="link" title="Toggle Theme">
+    <span class="link-icon">
+      <ion-icon id="themeIcon" name="moon"></ion-icon>
+    </span>
+    <span class="link-title">Theme</span>
+  </div>
+</div>
+
+  <div class="content" id="home">
+    <h1>Welcome to My Page</h1>
+    <p>This website has been created as part of my effort to enhance and develop my skills in front-end web development. It serves as a platform for practicing and applying various web technologies, design principles, and coding techniques. Each component of the site reflects my ongoing commitment to learning and improving in this field.</p>
+<br />
+<p>Thank you for taking the time to visit.</p>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+
+<div class="content" id="message" style="display: none;">
+  <h1>Message</h1>
+
+  <div class="contact-info">
+    <p>
+      <ion-icon name="mail"></ion-icon>
+      <a href="https://mail.google.com/mail/mu/mp/276/#co">ablanakervin@gmail.com</a>
+    </p>
+    <p>
+      <ion-icon name="logo-facebook"></ion-icon>
+      <a href="https://www.facebook.com/share/18soSvnWZm/">Kervin L. Ablaña</a>
+    </p>
+  </div>
+</div>
+  
+  
+  
+  
+  
+  
+
+  <div class="content" id="profile" style="display: none;">
+  <div class="avatar-wrapper">
+    <div class="avatar-border">
+      <img src="bo.jpg" alt="Profile Picture" class="avatar-img" />
+    </div>
+  </div>
+
+  <h1>Kervin L. Ablaña</h1>
+  <p>Age: 16<br>Grade: 11 ICT<br>School: Tuburan National High School</p>
+</div>
+  
+  <script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.content');
+    sections.forEach(section => section.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+
+  // Dark mode toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+
+    // Change icon
+    const isDark = document.body.classList.contains('dark');
+    themeIcon.setAttribute('name', isDark ? 'sunny-outline' : 'moon');
+  });
+
+    function showSection(id) {
+      const sections = document.querySelectorAll('.content');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
